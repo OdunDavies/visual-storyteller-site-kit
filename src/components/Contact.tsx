@@ -9,14 +9,38 @@ import { toast } from '@/hooks/use-toast';
 
 export const Contact = () => {
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your inquiry. I'll get back to you within 24 hours.",
-    });
-    setContactForm({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${contactForm.name}`);
+      const body = encodeURIComponent(
+        `Name: ${contactForm.name}\nEmail: ${contactForm.email}\n\nMessage:\n${contactForm.message}`
+      );
+      const mailtoLink = `mailto:alijosephvictor@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Email client opened!",
+        description: "Your default email app should open with the message pre-filled.",
+      });
+      
+      setContactForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue opening your email client. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,11 +67,11 @@ export const Contact = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <Mail className="mr-4 text-amber-500" size={20} />
-                <span>alex@alexchenvideo.com</span>
+                <span>alijosephvictor@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="mr-4 text-amber-500" size={20} />
-                <span>+1 (555) 123-4567</span>
+                <span>+234 813 655 7795</span>
               </div>
             </div>
             <Button 
@@ -98,9 +122,10 @@ export const Contact = () => {
             </div>
             <Button 
               type="submit"
+              disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold"
             >
-              Send Message
+              {isSubmitting ? 'Opening Email...' : 'Send Message'}
             </Button>
           </motion.form>
         </div>
