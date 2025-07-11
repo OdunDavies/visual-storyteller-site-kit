@@ -1,73 +1,128 @@
-# Welcome to your Lovable project
 
-## Project info
+# Alex Chen - Videographer Portfolio
 
-**URL**: https://lovable.dev/projects/08ba8907-038d-43a1-8887-20196ee09916
+A modern, cinematic portfolio website for a professional videographer and video editor, built with React, TypeScript, Tailwind CSS, and Framer Motion.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Cinematic Hero Section** with full-screen video background
+- **Smooth Scroll Animations** powered by Framer Motion
+- **Interactive Portfolio Gallery** with hover effects and video previews
+- **Professional Service Cards** with pricing information
+- **Animated Testimonials** carousel
+- **Contact Form** with elegant interactions
+- **Fully Responsive** design optimized for all devices
+- **Performance Optimized** with lazy loading and optimized assets
+- **SEO Optimized** with structured data and meta tags
+- **Accessibility Features** with ARIA roles and semantic HTML
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/08ba8907-038d-43a1-8887-20196ee09916) and start prompting.
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Lucide React** for icons
+- **Shadcn/ui** for UI components
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+```
+src/
+├── pages/
+│   └── Index.tsx          # Main portfolio page
+├── components/
+│   └── ui/               # Reusable UI components
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions
+├── index.css            # Global styles and design system
+└── main.tsx             # App entry point
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js 18+ and npm
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd videographer-portfolio
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:8080](http://localhost:8080) in your browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development
 
-**Use GitHub Codespaces**
+### Available Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
 
-## What technologies are used for this project?
+### Customization
 
-This project is built with:
+#### Content Updates
+- Update personal information, services, and testimonials in `src/pages/Index.tsx`
+- Replace placeholder images with actual portfolio content
+- Add your actual video files to the `public` directory
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+#### Styling
+- Modify the design system variables in `src/index.css`
+- Update Tailwind configuration in `tailwind.config.ts`
+- Colors use HSL format for consistency
 
-## How can I deploy this project?
+#### Animations
+- Customize animation timings and effects in the Framer Motion components
+- Add new animations using the predefined keyframes in the CSS
 
-Simply open [Lovable](https://lovable.dev/projects/08ba8907-038d-43a1-8887-20196ee09916) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+### Vercel (Recommended)
 
-Yes, you can!
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run: `vercel`
+3. Follow the deployment prompts
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Manual Build
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Build the project: `npm run build`
+2. Deploy the `dist` folder to your hosting provider
+
+## Performance Optimizations
+
+- **Image Optimization**: Use WebP format for images when possible
+- **Video Optimization**: Compress videos and use appropriate formats (MP4/WebM)
+- **Code Splitting**: Components are automatically code-split by Vite
+- **Font Loading**: Fonts are preloaded for faster rendering
+- **Lazy Loading**: Images and videos load only when needed
+
+## Browser Support
+
+- Chrome/Edge 88+
+- Firefox 78+
+- Safari 14+
+- iOS Safari 14+
+- Android Chrome 88+
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For questions or customization requests, contact Alex Chen at alex@alexchenvideo.com
