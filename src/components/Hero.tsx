@@ -4,6 +4,13 @@ import { Play, Award, Users, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
@@ -39,6 +46,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+              onClick={() => scrollToSection('portfolio')}
             >
               <Play className="mr-2" size={20} />
               View My Work
@@ -47,6 +55,7 @@ export const Hero = () => {
               variant="outline" 
               size="lg"
               className="border-white text-white hover:bg-white hover:text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+              onClick={() => scrollToSection('contact')}
             >
               Get In Touch
             </Button>

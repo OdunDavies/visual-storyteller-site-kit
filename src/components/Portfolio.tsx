@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Play, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export const Portfolio = () => {
   const portfolio = [
@@ -12,11 +13,15 @@ export const Portfolio = () => {
     { id: 6, title: "Corporate Video", thumbnail: "/placeholder.svg", video: "#" }
   ];
 
+  const handlePortfolioClick = () => {
+    window.open('https://drive.google.com/drive/folders/1JcdPh6JQ1VhZ2p8A3RFY4SEiXMalQPtC?usp=sharing', '_blank');
+  };
+
   return (
     <section id="portfolio" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16"
+          className="text-4xl md:text-5xl font-bold text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -24,6 +29,23 @@ export const Portfolio = () => {
         >
           Portfolio
         </motion.h2>
+
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Button 
+            onClick={handlePortfolioClick}
+            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold"
+            size="lg"
+          >
+            <ExternalLink className="mr-2" size={20} />
+            View Complete Portfolio
+          </Button>
+        </motion.div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {portfolio.map((item, index) => (

@@ -16,7 +16,7 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
+      // Create mailto link with form data to Joseph's email
       const subject = encodeURIComponent(`Portfolio Inquiry from ${contactForm.name}`);
       const body = encodeURIComponent(
         `Name: ${contactForm.name}\nEmail: ${contactForm.email}\n\nMessage:\n${contactForm.message}`
@@ -24,11 +24,11 @@ export const Contact = () => {
       const mailtoLink = `mailto:alijosephvictor@gmail.com?subject=${subject}&body=${body}`;
       
       // Open default email client
-      window.location.href = mailtoLink;
+      window.open(mailtoLink, '_blank');
       
       toast({
         title: "Email client opened!",
-        description: "Your default email app should open with the message pre-filled.",
+        description: "Your message has been prepared and sent to Joseph's email.",
       });
       
       setContactForm({ name: '', email: '', message: '' });
@@ -126,7 +126,7 @@ export const Contact = () => {
               disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold h-12"
             >
-              {isSubmitting ? 'Opening Email...' : 'Send Message'}
+              {isSubmitting ? 'Sending Message...' : 'Send Message'}
             </Button>
           </motion.form>
         </div>
