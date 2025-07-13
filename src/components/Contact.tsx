@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 export const Contact = () => {
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
@@ -16,26 +17,31 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data to Joseph's email
-      const subject = encodeURIComponent(`Portfolio Inquiry from ${contactForm.name}`);
-      const body = encodeURIComponent(
-        `Name: ${contactForm.name}\nEmail: ${contactForm.email}\n\nMessage:\n${contactForm.message}`
-      );
-      const mailtoLink = `mailto:alijosephvictor@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Open default email client
-      window.open(mailtoLink, '_blank');
-      
+      // Call the edge function to send email and save to database
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: contactForm.name,
+          email: contactForm.email,
+          message: contactForm.message
+        }
+      });
+
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Failed to send message');
+      }
+
       toast({
-        title: "Email client opened!",
-        description: "Your message has been prepared and sent to Joseph's email.",
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. Joseph will get back to you soon.",
       });
       
       setContactForm({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Contact form error:', error);
       toast({
-        title: "Error",
-        description: "There was an issue opening your email client. Please try again.",
+        title: "Error sending message",
+        description: error.message || "There was an issue sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {
