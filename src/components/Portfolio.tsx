@@ -39,7 +39,7 @@ export const Portfolio = () => {
         >
           <Button 
             onClick={handlePortfolioClick}
-            className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary/90 hover:to-orange-600 text-primary-foreground font-semibold"
+            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold"
             size="lg"
           >
             <ExternalLink className="mr-2" size={20} />

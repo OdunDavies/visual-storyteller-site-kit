@@ -73,17 +73,17 @@ export const Contact = () => {
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Get In Touch</h3>
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <div className="flex items-center">
-                <Mail className="mr-3 sm:mr-4 text-primary flex-shrink-0" size={20} />
+                <Mail className="mr-3 sm:mr-4 text-amber-500 flex-shrink-0" size={20} />
                 <span className="text-sm sm:text-base break-all">alijosephvictor@gmail.com</span>
               </div>
               <div className="flex items-center">
-                <Phone className="mr-3 sm:mr-4 text-primary flex-shrink-0" size={20} />
+                <Phone className="mr-3 sm:mr-4 text-amber-500 flex-shrink-0" size={20} />
                 <span className="text-sm sm:text-base">+234 813 655 7795</span>
               </div>
             </div>
             <Button 
               variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full sm:w-auto"
+              className="border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black w-full sm:w-auto"
             >
               <Download className="mr-2" size={16} />
               Download Rate Card
@@ -103,7 +103,7 @@ export const Contact = () => {
                 placeholder="Your Name"
                 value={contactForm.name}
                 onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                className="bg-input border-border text-foreground placeholder-muted-foreground h-12"
+                className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 h-12"
                 required
               />
             </div>
@@ -113,7 +113,7 @@ export const Contact = () => {
                 placeholder="Your Email"
                 value={contactForm.email}
                 onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                className="bg-input border-border text-foreground placeholder-muted-foreground h-12"
+                className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 h-12"
                 required
               />
             </div>
@@ -123,14 +123,14 @@ export const Contact = () => {
                 rows={5}
                 value={contactForm.message}
                 onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                className="bg-input border-border text-foreground placeholder-muted-foreground min-h-[120px] resize-none"
+                className="bg-gray-900/50 border-gray-700 text-white placeholder-gray-400 min-h-[120px] resize-none"
                 required
               />
             </div>
             <Button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary/90 hover:to-orange-600 text-primary-foreground font-semibold h-12"
+              className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold h-12"
             >
               {isSubmitting ? 'Sending Message...' : 'Send Message'}
             </Button>
