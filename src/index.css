@@ -10,59 +10,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cinematic Black & White Color Palette */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 4%;
+    --card: 0 0% 6%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 2%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 45 93% 58%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 92%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 45 93% 58%;
+    --accent-foreground: 0 0% 9%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 8%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 93% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Cinematic Grayscale Palette */
-    --cinematic-black: 0 0% 0%;
-    --cinematic-dark: 0 0% 8%;
-    --cinematic-gray-dark: 0 0% 15%;
-    --cinematic-gray: 0 0% 40%;
-    --cinematic-gray-light: 0 0% 70%;
-    --cinematic-light: 0 0% 92%;
-    --cinematic-white: 0 0% 100%;
-
-    /* Cinematic Shadows */
-    --shadow-cinematic: 0px 25px 50px -12px rgba(0, 0, 0, 0.8);
-    --shadow-film-strip: 0px 4px 20px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0px 0px 40px rgba(255, 255, 255, 0.1);
-
-    --sidebar-background: 0 0% 2%;
-    --sidebar-foreground: 0 0% 80%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 8%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 64%;
+    --sidebar-primary: 45 93% 58%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 93% 58%;
   }
 }
 
@@ -117,156 +102,40 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Cinematic Backgrounds */
   .cinematic-gradient {
-    background: linear-gradient(135deg, 
-      hsl(var(--cinematic-black)) 0%, 
-      hsl(var(--cinematic-dark)) 30%, 
-      hsl(var(--cinematic-black)) 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   }
 
-  .cinematic-gradient-subtle {
-    background: linear-gradient(180deg, 
-      hsl(var(--cinematic-black)) 0%, 
-      hsl(var(--cinematic-dark)) 50%, 
-      hsl(var(--cinematic-black)) 100%);
+  .gold-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
   }
 
-  .film-grain {
-    position: relative;
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
 
-  .film-grain::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 25% 25%, transparent 50%, rgba(255,255,255,0.02) 50%),
-      radial-gradient(circle at 75% 75%, transparent 50%, rgba(255,255,255,0.01) 50%);
-    background-size: 4px 4px, 6px 6px;
-    pointer-events: none;
-    opacity: 0.3;
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px) saturate(180%);
   }
 
-  /* Film Strip Effects */
-  .film-strip-border {
-    position: relative;
+  .animation-delay-100 {
+    animation-delay: 100ms;
   }
 
-  .film-strip-border::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 8px;
-    background: repeating-linear-gradient(
-      to bottom,
-      hsl(var(--cinematic-white)) 0px,
-      hsl(var(--cinematic-white)) 8px,
-      transparent 8px,
-      transparent 16px
-    );
+  .animation-delay-200 {
+    animation-delay: 200ms;
   }
 
-  .film-strip-border::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 8px;
-    background: repeating-linear-gradient(
-      to bottom,
-      hsl(var(--cinematic-white)) 0px,
-      hsl(var(--cinematic-white)) 8px,
-      transparent 8px,
-      transparent 16px
-    );
+  .animation-delay-300 {
+    animation-delay: 300ms;
   }
 
-  /* Cinematic Text Effects */
-  .text-cinematic-shadow {
-    text-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.3),
-      0 2px 4px rgba(0, 0, 0, 0.8);
+  .animation-delay-400 {
+    animation-delay: 400ms;
   }
 
-  .text-film-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-  }
-
-  /* Cinematic Buttons */
-  .btn-cinematic {
-    position: relative;
-    background: transparent;
-    border: 1px solid hsl(var(--cinematic-white));
-    color: hsl(var(--cinematic-white));
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-  }
-
-  .btn-cinematic:hover {
-    background: hsl(var(--cinematic-white));
-    color: hsl(var(--cinematic-black));
-    box-shadow: var(--shadow-glow);
-  }
-
-  .btn-cinematic::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.2), 
-      transparent
-    );
-    transition: left 0.5s;
-  }
-
-  .btn-cinematic:hover::before {
-    left: 100%;
-  }
-
-  /* Animation Delays */
-  .animation-delay-100 { animation-delay: 100ms; }
-  .animation-delay-200 { animation-delay: 200ms; }
-  .animation-delay-300 { animation-delay: 300ms; }
-  .animation-delay-400 { animation-delay: 400ms; }
-  .animation-delay-500 { animation-delay: 500ms; }
-  .animation-delay-600 { animation-delay: 600ms; }
-  .animation-delay-700 { animation-delay: 700ms; }
-  .animation-delay-800 { animation-delay: 800ms; }
-
-  /* Cinematic Hover Effects */
-  .hover-cinematic {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-cinematic:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-cinematic);
-  }
-
-  /* Film Reel Effect */
-  .film-reel {
-    position: relative;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle at center,
-      hsl(var(--cinematic-dark)) 20%,
-      hsl(var(--cinematic-black)) 80%
-    );
+  .animation-delay-500 {
+    animation-delay: 500ms;
   }
 }
 

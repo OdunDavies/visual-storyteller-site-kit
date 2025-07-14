@@ -12,118 +12,98 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden film-strip-border">
-      {/* Background Video with Cinematic Overlay */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover filter grayscale animate-film-grain"
+          className="w-full h-full object-cover"
         >
           <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9a1e8ff&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-cinematic-black/90 via-cinematic-black/60 to-cinematic-black/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-foreground px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-cinematic font-bold mb-6 sm:mb-8 leading-[0.85] text-film-title text-cinematic-shadow">
-            Visual <span className="text-primary block sm:inline">Storyteller</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            Visual <span className="text-amber-500">Storyteller</span>
           </h1>
-          <motion.p 
-            className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-cinematic-gray-light max-w-4xl mx-auto leading-relaxed px-2 font-modern font-light"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            Crafting cinematic experiences through the lens of creativity.<br />
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+            Crafting cinematic experiences through the lens of creativity. 
             From concept to final cut, I bring your vision to life.
-          </motion.p>
+          </p>
           
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-16 sm:mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16">
             <Button 
               size="lg" 
-              className="btn-cinematic text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 w-full sm:w-auto group relative overflow-hidden animate-glow-pulse"
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-black font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
               onClick={() => scrollToSection('portfolio')}
             >
-              <Play className="mr-3 group-hover:animate-shutter transition-all duration-300" size={22} />
-              View Demo Reel
+              <Play className="mr-2" size={20} />
+              View My Work
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-cinematic-white text-cinematic-white hover:bg-cinematic-white hover:text-cinematic-black text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 w-full sm:w-auto transition-all duration-500 hover:shadow-2xl"
+              className="border-white text-white hover:bg-white hover:text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
               onClick={() => scrollToSection('contact')}
             >
               Get In Touch
             </Button>
-          </motion.div>
+          </div>
 
-          {/* Cinematic Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
+          {/* Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             <motion.div 
-              className="text-center group hover-cinematic"
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <div className="flex justify-center mb-4">
-                <div className="film-reel w-12 h-12 flex items-center justify-center">
-                  <Video className="text-primary animate-film-roll" size={32} />
-                </div>
+              <div className="flex justify-center mb-2 sm:mb-3">
+                <Video className="text-amber-500" size={28} />
               </div>
-              <div className="text-3xl sm:text-4xl font-cinematic font-bold text-primary mb-2">200+</div>
-              <div className="text-sm sm:text-base text-cinematic-gray font-modern uppercase tracking-wider">Projects Completed</div>
+              <div className="text-2xl sm:text-3xl font-bold text-amber-500">200+</div>
+              <div className="text-sm sm:text-base text-gray-300">Projects Completed</div>
             </motion.div>
 
             <motion.div 
-              className="text-center group hover-cinematic"
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.7 }}
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <div className="flex justify-center mb-4">
-                <div className="film-reel w-12 h-12 flex items-center justify-center">
-                  <Users className="text-primary" size={32} />
-                </div>
+              <div className="flex justify-center mb-2 sm:mb-3">
+                <Users className="text-amber-500" size={28} />
               </div>
-              <div className="text-3xl sm:text-4xl font-cinematic font-bold text-primary mb-2">50+</div>
-              <div className="text-sm sm:text-base text-cinematic-gray font-modern uppercase tracking-wider">Happy Clients</div>
+              <div className="text-2xl sm:text-3xl font-bold text-amber-500">50+</div>
+              <div className="text-sm sm:text-base text-gray-300">Happy Clients</div>
             </motion.div>
 
             <motion.div 
-              className="text-center group hover-cinematic"
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.9 }}
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <div className="flex justify-center mb-4">
-                <div className="film-reel w-12 h-12 flex items-center justify-center">
-                  <Award className="text-primary" size={32} />
-                </div>
+              <div className="flex justify-center mb-2 sm:mb-3">
+                <Award className="text-amber-500" size={28} />
               </div>
-              <div className="text-3xl sm:text-4xl font-cinematic font-bold text-primary mb-2">8+</div>
-              <div className="text-sm sm:text-base text-cinematic-gray font-modern uppercase tracking-wider">Years Experience</div>
+              <div className="text-2xl sm:text-3xl font-bold text-amber-500">8+</div>
+              <div className="text-sm sm:text-base text-gray-300">Years Experience</div>
             </motion.div>
           </div>
         </motion.div>
       </div>
-
-      {/* Cinematic film strip effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-cinematic-white to-transparent opacity-20"></div>
     </section>
   );
 };
