@@ -88,10 +88,6 @@ export const Contact = () => {
               variant="outline" 
               className="border-foreground text-foreground hover:bg-foreground hover:text-background w-full sm:w-auto transition-all duration-300"
             >
-              <Download className="mr-2" size={16} />
-              Download Rate Card
-            </Button>
-          </motion.div>
           
           <motion.form
             onSubmit={handleContactSubmit}
