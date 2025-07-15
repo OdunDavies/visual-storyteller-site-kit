@@ -37,7 +37,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white border-black text-black max-w-md mx-4">
+      <DialogContent className="bg-white border border-black text-black max-w-md mx-4">
         <DialogHeader>
           <DialogTitle className="text-center text-xl font-bold text-black">
             Payment Details
@@ -45,7 +45,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
         </DialogHeader>
 
         <div className="space-y-6">
-          <Card className="bg-white border-black">
+          <Card className="bg-white border border-black">
             <CardContent className="p-6 space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-black">Account Name:</span>
@@ -58,7 +58,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
                     className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'name' ? (
-                      <Check className="h-3 w-3 text-green-600" />
+                      <Check className="h-3 w-3 text-black" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -77,7 +77,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
                     className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'bank' ? (
-                      <Check className="h-3 w-3 text-green-600" />
+                      <Check className="h-3 w-3 text-black" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -96,7 +96,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
                     className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'account' ? (
-                      <Check className="h-3 w-3 text-green-600" />
+                      <Check className="h-3 w-3 text-black" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -110,7 +110,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
             <p className="font-bold text-black mb-2">
               Kindly make payment to the account above and click 'Done' when completed.
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-black">
               Selected Package: <span className="text-black font-semibold">{packageName}</span>
             </p>
           </div>
@@ -119,14 +119,14 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
             <Button
               variant="outline"
               onClick={onClose}
-              className="flex-1 border-black text-black hover:bg-black hover:text-white"
+              className="flex-1 border border-black text-black hover:bg-black hover:text-white"
             >
               Cancel
             </Button>
             <Button
               variant="outline"
               onClick={handleDone}
-              className="flex-1 border-black text-black hover:bg-black hover:text-white font-semibold"
+              className="flex-1 border border-black text-black hover:bg-black hover:text-white font-semibold"
             >
               Done
             </Button>
