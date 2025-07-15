@@ -84,10 +84,7 @@ export const Contact = () => {
                 <span className="text-sm sm:text-base text-muted-foreground">+234 813 655 7795</span>
               </div>
             </div>
-            <Button 
-              variant="outline" 
-              className="border-foreground text-foreground hover:bg-foreground hover:text-background w-full sm:w-auto transition-all duration-300"
-            >
+     
           
           <motion.form
             onSubmit={handleContactSubmit}
