@@ -35,7 +35,7 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-            Visual <span className="elegant-gradient bg-clip-text text-transparent">Storyteller</span>
+            Joseph <span className="elegant-gradient bg-clip-text text-transparent">Ali</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
             Crafting cinematic experiences through the lens of creativity. 
@@ -49,7 +49,7 @@ export const Hero = () => {
               onClick={() => scrollToSection('portfolio')}
             >
               <Play className="mr-2" size={20} />
-              Play Demo Reel
+              View Portfolio
             </Button>
             <Button 
               variant="outline" 

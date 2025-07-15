@@ -7,11 +7,11 @@ export const Footer = () => {
     <footer className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-background">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
         <div className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">
-          © 2025 Joseph Victor. All rights reserved.
+          © 2025 Joseph Ali. All rights reserved.
         </div>
         <div className="flex space-x-4 sm:space-x-6">
           <motion.a 
-            href="https://www.instagram.com/joetheboy_" 
+            href="https://www.instagram.com/joetheboy__" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors p-2 sm:p-0"

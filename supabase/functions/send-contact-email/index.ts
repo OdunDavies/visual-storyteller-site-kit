@@ -68,7 +68,7 @@ const handler = async (req: Request): Promise<Response> => {
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
           <p>Best regards,<br>Joseph Victor</p>
-          <p style="color: #6b7280; font-size: 14px;">Full Stack Developer & UI/UX Designer</p>
+          <p style="color: #6b7280; font-size: 14px;">Videographer & Video Editor</p>
         </div>
       `,
     });

@@ -13,7 +13,7 @@ export const About = () => {
       >
         <div>
           <motion.img 
-            src="/placeholder.svg" 
+            src="/jtb.jpg" 
             alt="Joseph Victor" 
             className="w-full max-w-lg rounded-lg shadow-lg border border-border grayscale hover:grayscale-0 transition-all duration-300"
             initial={{ opacity: 0, scale: 0.9 }}
