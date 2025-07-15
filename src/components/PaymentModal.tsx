@@ -37,28 +37,28 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-background border-foreground text-foreground max-w-md mx-4">
+      <DialogContent className="bg-white border-black text-black max-w-md mx-4">
         <DialogHeader>
-          <DialogTitle className="text-center text-xl font-bold text-foreground">
+          <DialogTitle className="text-center text-xl font-bold text-black">
             Payment Details
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
-          <Card className="bg-background border-foreground">
+          <Card className="bg-white border-black">
             <CardContent className="p-6 space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-foreground">Account Name:</span>
+                <span className="text-black">Account Name:</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold">{accountDetails.name}</span>
+                  <span className="font-semibold text-black">{accountDetails.name}</span>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(accountDetails.name, 'name')}
-                    className="h-6 w-6 p-0"
+                    className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'name' ? (
-                      <Check className="h-3 w-3 text-green-500" />
+                      <Check className="h-3 w-3 text-green-600" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -67,17 +67,17 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-foreground">Bank:</span>
+                <span className="text-black">Bank:</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold">{accountDetails.bank}</span>
+                  <span className="font-semibold text-black">{accountDetails.bank}</span>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(accountDetails.bank, 'bank')}
-                    className="h-6 w-6 p-0"
+                    className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'bank' ? (
-                      <Check className="h-3 w-3 text-green-500" />
+                      <Check className="h-3 w-3 text-green-600" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -86,17 +86,17 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-foreground">Account Number:</span>
+                <span className="text-black">Account Number:</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold font-mono">{accountDetails.accountNumber}</span>
+                  <span className="font-semibold font-mono text-black">{accountDetails.accountNumber}</span>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => copyToClipboard(accountDetails.accountNumber, 'account')}
-                    className="h-6 w-6 p-0"
+                    className="h-6 w-6 p-0 text-black"
                   >
                     {copiedField === 'account' ? (
-                      <Check className="h-3 w-3 text-green-500" />
+                      <Check className="h-3 w-3 text-green-600" />
                     ) : (
                       <Copy className="h-3 w-3" />
                     )}
@@ -106,12 +106,12 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
             </CardContent>
           </Card>
 
-          <div className="text-center p-4 bg-background rounded-lg border border-foreground">
-            <p className="font-bold text-foreground mb-2">
+          <div className="text-center p-4 bg-white rounded-lg border border-black">
+            <p className="font-bold text-black mb-2">
               Kindly make payment to the account above and click 'Done' when completed.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Selected Package: <span className="text-foreground font-semibold">{packageName}</span>
+            <p className="text-sm text-gray-600">
+              Selected Package: <span className="text-black font-semibold">{packageName}</span>
             </p>
           </div>
 
@@ -119,14 +119,14 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, pac
             <Button
               variant="outline"
               onClick={onClose}
-              className="flex-1 border-foreground text-foreground hover:bg-foreground hover:text-background"
+              className="flex-1 border-black text-black hover:bg-black hover:text-white"
             >
               Cancel
             </Button>
             <Button
               variant="outline"
               onClick={handleDone}
-              className="flex-1 border-foreground text-foreground hover:bg-foreground hover:text-background font-semibold"
+              className="flex-1 border-black text-black hover:bg-black hover:text-white font-semibold"
             >
               Done
             </Button>

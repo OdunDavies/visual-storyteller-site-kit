@@ -84,8 +84,7 @@ export const Contact = () => {
                 <span className="text-sm sm:text-base text-muted-foreground">+234 813 655 7795</span>
               </div>
             </div>
-     
-          
+          </motion.div>
           <motion.form
             onSubmit={handleContactSubmit}
             className="space-y-4 sm:space-y-6 order-1 lg:order-2"
